@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-
+import pymongo
 applicaton=Flask(__name__)
 app=applicaton
 
@@ -10,7 +10,6 @@ def home():
     else:
         name=request.form.get('Your Name')
         suspect=request.form.get('Her/Him Name')
-        import pymongo
 
         client = pymongo.MongoClient("mongodb+srv://saisachin1686863:ss1686863@cluster0.uubofh7.mongodb.net/?retryWrites=true&w=majority")
         db = client.test
